@@ -1,0 +1,87 @@
+
+div.containner{ 
+	height:100%; 
+	width:100%;
+	margin: 0;
+	position:fixed 
+}
+div.home{
+	
+	background-color: #3b5999;
+	color:#fff;
+	margin:0;
+	padding-top:20px;
+	font-size:14pt;
+	height:20%;
+}
+div.homecontent{
+	
+	background-color: #dfe3ee;
+	margin:0;
+	padding-top:50px;
+	font-size:14pt;
+	height:80%;
+}
+
+.loginbtn{
+	margin-top:35px;
+}
+.clear{
+	clear:left;
+}
+.center{
+	text-align:center;
+}
+.error{
+	color:red;
+	font-size:12pt;
+	font-weight:normal;
+}
+.userimg{
+	text-align:center;
+	padding: 10px;
+}
+.postDiv{    
+    border: 1px solid black;
+    margin: 5px;
+    padding: 10px;
+}
+
+.fav{
+	width:28px;
+	height:28px;
+	background-image:url("../images/fav.png");	
+}
+.fav1{
+	width:28px;
+	height:28px;
+	background-image:url("../images/fav1.png");	
+}
+.oldpost{
+	background-color:#dfe3ee;
+	padding:7px;
+	margin:12px;
+	border-radius:5px;
+}
+.right{
+	float:right;
+}
+.padding{
+	padding:10px;
+}
+.border{
+	border:1px solid red;
+}
+.margin{
+	margin:10px;
+}
+.commentimp{
+	background: #FFF;
+	margin:5px;
+	padding:5px;
+}
+.p-status{
+	background-color: #dce3ee;
+	margin:5px;
+	padding:5px;
+}

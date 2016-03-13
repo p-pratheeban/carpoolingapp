@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<!--
+	CSE 190M, Summer 2012
+	This file is a tip calculator page using JavaScript.
+	-->
+
+	<head>
+		<title>Tip Calculator</title>
+		<link href="tip.css" type="text/css" rel="stylesheet" />
+		<!-- <script src="tip.js" type="text/javascript"></script> -->
+		<style>
+			.ex{
+				background-color: red;
+			}
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+//setInterval(booyah, 0);
+var c = (function() {//the parens surrounding the function are JS syntax for immediate evaluation
+	var privateCounter = 0; //private data
+	function changeBy(val) { //private inner function
+	privateCounter += val;
+	}
+	return {
+		increment: function() {// three public functions are closures that share the same environment.
+		changeBy(1);
+		},
+		decrement: function() {
+		changeBy(-1);
+		},
+		value: function() {
+		console.log(privateCounter);
+		return privateCounter;
+		}
+	}
+})();
+//alert(c.value());
+var animal={
+	"color" : "red",
+	numlegs:4
+}
+var dog = Object.create(animal);
+console.log(dog.numlegs);
+
+var x = 3;
+function f(n) { return n + 1; }
+x = f(5);
+function g(n) { x = 99; }
+g(5);
+var y = x;
+console.log(y);
+
+$(function() {
+$("#xyz").css("background-color","red");
+var newDOMElmt = $("<p>abc</p>");
+$("#xyz").append($("<p>abc</p>"));
+
+function myCallBack(oldTime) {
+var times = "The old time was: " + oldTime + " The new time is: " + Date();
+alert(times);
+}
+var loadTime = Date();
+$('#btn').click( myCallBack);
+
+$("body,div,p").click(function(e){
+	myCallBack();
+	e.stopPropagation();
+	e.stopImmediatePropagation();
+});
+
+$("p").click(myCallBack);
+});
+
+var student= 'Sam';
+var obj = {
+		student: 'Kim',
+		teacher: {
+		student: 'Pam',
+		get: function() {
+		return this.student;
+		}
+	}
+};
+console.log(obj.teacher.get());
+var test = obj.teacher.get;
+console.log(test());
+var x=obj.teacher.get.bind(obj);
+console.log(x());
+abc = function () { 
+	return 1 
+}
+console.log(abc());
+function abc() {
+	document.getElementById("xyz").className = "ex";
+	// body...
+}
+
+console.log("before");
+
+
+console.log("after");
+function booyah() {   // called when the timer goes off
+console.log("inside");
+}
+
+</script>
+	</head>
+
+
+	<body>
+	<div id="xyz">
+<p>
+clickme!
+</p>
+</div>
+<div id="xyz">Abc</div>
+<button id="btn">wait a bit</button>
+
+
+		<h1>
+			<img id="logo" src="calc.jpg" alt="++--**//" />
+			  Tip Calculator
+		</h1>
+
+		<div>
+			<label><input id="subtotal" type="text" /> $ Subtotal</label>
+		</div>
+
+		<div>
+			<label><input id="tip" type="text" /> % Tip</label>
+		</div>
+
+		<div>
+			<button id="btn"  >Calculate Tip</button>
+		</div>
+
+		<hr />
+
+		<div>
+			<h2>Your total:</h2>
+			<p id="total">$0.00</p>
+		</div>
+	</body>
+</html>
